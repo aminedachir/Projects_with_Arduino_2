@@ -1,9 +1,10 @@
+int D = 0;
 void setup() {
-  // put your setup code here, to run once:
-
+  pinMode(10,OUTPUT);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  D = analogRead(A2)
+  if (D>800){digitalWrite(10,LOW);}
+  else {digitalWrite(10,HIGH);}
 }
