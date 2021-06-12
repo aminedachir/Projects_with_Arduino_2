@@ -1,5 +1,5 @@
-led = 10;
-lx = 700
+int led = 10;
+int lx = 700
 void setup(){
   pinMode(led,OUTPUT);
 }
