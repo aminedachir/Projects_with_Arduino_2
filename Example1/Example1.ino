@@ -1,8 +1,9 @@
-
+led = 10;
+lx = 700
 void setup(){
-  pinMode(10,OUTPUT);
+  pinMode(led,OUTPUT);
 }
 void loop(){
-  if (analogRead(A0)>700){digitalWrite(10,LOW);}
-  else {digitalWrite(10,HIGH);}
+  if (analogRead(A0)>lx){digitalWrite(led,LOW);}
+  else {digitalWrite(led,HIGH);}
 }
