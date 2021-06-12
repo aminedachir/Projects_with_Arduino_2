@@ -1,10 +1,8 @@
-int D = 0;
-void setup() {
+
+void setup(){
   pinMode(10,OUTPUT);
 }
-
-void loop() {
-  D = analogRead(A2)
-  if (D>800){digitalWrite(10,LOW);}
+void loop(){
+  if (analogRead(A0)>700){digitalWrite(10,LOW);}
   else {digitalWrite(10,HIGH);}
 }
