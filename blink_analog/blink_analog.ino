@@ -3,6 +3,9 @@ void setup() {
 }
 
 void loop() {
-  analogWrite(10,10);
+  static int x = 0;
+  analogWrite(10,x);
+  delay(500);
+  x = x + 10;
 
 }
