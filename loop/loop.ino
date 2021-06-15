@@ -4,14 +4,10 @@ void setup() {
 
 void loop() {
   for (int i=0;i<10;i++) {
-    if (i<10){goto lable1;}
-    lable1 : digitalWrite(10,HIGH);}
-    /*
+    digitalWrite(10,HIGH),
     delay(200),
     digitalWrite(10,LOW),
-    delay(200););
-    }
-    
+    delay(200)
+    ;}
   delay(5000);
-  */
 }
