@@ -1,6 +1,6 @@
-int RED = 0;
-int GREEN = 0;
-int BLUE = 0;
+int RED = 200;
+int GREEN = 30;
+int BLUE = 80;
 void setup() {
   pinMode(9,OUTPUT);
   pinMode(10,OUTPUT);
