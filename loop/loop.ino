@@ -3,13 +3,11 @@ void setup() {
 }
 
 void loop() {
-  int i = 0;
-  while (i<10) {
+  for (int i=0;i<10;i++) {
     digitalWrite(10,HIGH),
     delay(200),
     digitalWrite(10,LOW),
-    delay(200),
-    i++
-    ;}
+    delay(200);}
+    
   delay(5000);
 }
