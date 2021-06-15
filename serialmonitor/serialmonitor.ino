@@ -1,10 +1,15 @@
+int x;
+int led = 10;
 void setup() {
+  pinMode(10,OUTPUT);
   Serial.begin(9600);
-  for (int i=0;i<=10;i++){
-    Serial.println(i,BIN);
-    delay(300); 
-  }
+  Serial.print("Enter Value of Delay :");
+  while (Serial.available() == 0){;}
+  x = Serial.parseInt();
 }
-
 void loop() {
+  digitalWrite(led,1);
+  delay(x);
+  digitalWrite(led,0);
+  delay(x);
 }
