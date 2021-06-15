@@ -16,4 +16,5 @@ void loop() {
   analogWrite(G,x=x+30),
   analogWrite(B,x=x+10);  
   delay(1000);}
+  else {x = 0,analogWrite(R,x),analogWrite(G,x),analogWrite(B,x),delay(1000);}
 }
