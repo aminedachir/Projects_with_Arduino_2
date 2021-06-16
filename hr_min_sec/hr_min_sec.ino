@@ -1,9 +1,20 @@
+int x;
 void setup() {
-  // put your setup code here, to run once:
-
+  Serial.begin(9600);
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-
+  Serial.println("enter a number : ");
+  while (Serial.available() == 0) {;}
+  int x = Serial.parseInt();
+  int sec = x%60;
+  int mint = x/60;
+  int hr = x/3600;
+  Serial.print("\n hr = ");
+  Serial.print(hr);
+  Serial.print("\t mint = ");
+  Serial.print(mint);
+  Serial.print("\t sec = ");
+  Serial.print(sec);
+  
 }
