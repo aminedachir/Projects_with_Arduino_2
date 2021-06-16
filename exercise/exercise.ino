@@ -12,11 +12,11 @@ void setup() {
 void loop() {
   for (int i=0;i<x;i++){
     digitalWrite(led,1);
-    delay(1000);
+    delay(500);
     digitalWrite(led,0);
-    delay(1000);
+    delay(500);
     }
-   delay(5000);
+   delay(2500);
   
   
 }
