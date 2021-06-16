@@ -7,19 +7,16 @@ void setup() {
   Serial.println("How many blinks :");
   while (Serial.available() == 0) {;}
   x = Serial.parseInt();
-  delay(500);
-  Serial.println("How many Delay time in ms :");
-  while (Serial.available() == 0) {;}
-  y = Serial.parseInt();
 }
 
 void loop() {
   for (int i=0;i<x;i++){
     digitalWrite(led,1);
-    delay(y);
+    delay(1000);
     digitalWrite(led,0);
-    delay(y);
+    delay(1000);
     }
+   delay(5000);
   
   
 }
