@@ -1,8 +1,8 @@
+int sum;
 void setup() {
   Serial.begin(9600);
-  int a [ ] = {12,8,5};
-  float moyenn = (a[0]+a[1]+a[2])/3;
-  Serial.println(moyenn);
+  int students [ ] = {12,8,5,15,19,4,20,4.5,8.5,13};
+  for (int i=0;i<10;i++) {int sum = sum + students[i];}
 }
 
 void loop() {
