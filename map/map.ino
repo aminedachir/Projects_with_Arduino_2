@@ -1,9 +1,10 @@
-void setup() {
-  // put your setup code here, to run once:
-
+void setup()
+{
+  pinMode(10,OUTPUT);
 }
-
-void loop() {
-  // put your main code here, to run repeatedly:
-
+void loop()
+{
+  int x = analogRead(A0);
+  int y = map(x,0,1023,0,255);
+  analogWrite(10,y);
 }
