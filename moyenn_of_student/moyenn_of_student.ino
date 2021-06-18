@@ -1,10 +1,8 @@
 float moyenn = 3.78;
 void setup() {
-  // put your setup code here, to run once:
-
+  float parsent = moyenn*100/4;
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
 
 }
