@@ -9,7 +9,7 @@ void setup() {
     }
    for (int i=0;i<3;i+=2){
     int max_ = max(array_[i],array_[i+1])
-    Serial.println(array_[i];
+    Serial.println(max_);
     ;}
 }
 void loop() {
