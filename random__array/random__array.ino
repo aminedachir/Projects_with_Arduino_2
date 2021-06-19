@@ -8,7 +8,7 @@ void setup() {
     delay(2000);
     }
    for (int i=0;i<3;i+=2){
-    int max_ = max(array_[i],array_[i+1])
+    int max_ = max(array_[i],array_[i+1]);
     Serial.println(max_);
     ;}
 }
