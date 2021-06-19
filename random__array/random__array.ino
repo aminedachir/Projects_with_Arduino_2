@@ -6,8 +6,7 @@ void setup() {
     array_[i] = random(70,100);
     Serial.println(array_[i]);
     delay(2000);
-  ;}
+    }
 }
-
 void loop() {
 }
