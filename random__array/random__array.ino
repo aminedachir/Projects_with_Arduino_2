@@ -7,6 +7,9 @@ void setup() {
     Serial.println(array_[i]);
     delay(2000);
     }
+   for (int i=0;i<3;i+=2){
+    max(array_[i],array_[i+1])
+    ;}
 }
 void loop() {
 }
