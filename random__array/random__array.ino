@@ -6,10 +6,11 @@ void setup() {
     Serial.println(array_[i]);
     delay(2000);
     }
-   for (int i=0;i<3;i+=2){
+   for (int i=0;i<3;i++){
     int max_ = max(max_,array_[i]);
-    Serial.println(max_);
     ;}
+    Serial.print("max :");
+    Serial.println(max_);
 }
 void loop() {
 }
