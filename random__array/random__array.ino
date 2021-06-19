@@ -1,5 +1,4 @@
-int array_[3],max_;
-int x;
+int array_[3],max_,x;
 void setup() {
   Serial.begin(9600);
   for(int i=0;i<3;i++) {
