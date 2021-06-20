@@ -2,7 +2,6 @@ int led = 10;
 int D = 70;
 void setup() {
   pinMode(10,OUTPUT);
-  pinMode(9,OUTPUT);
 }
 
 void loop() {
