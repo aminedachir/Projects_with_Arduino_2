@@ -15,11 +15,6 @@ void setup() {
     else {int y=bitWrite(number_,i+1,1);}
   ;}
   Serial.println(number_);
-  /*int x = bitRead(number,0);
-  Serial.println(x);
-  int y = bitWrite(number,0,1);
-  Serial.println(y);*/
   }
-  
 void loop() {
 }
