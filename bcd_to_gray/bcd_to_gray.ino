@@ -11,9 +11,9 @@ void setup() {
   for (int i=0;i<3;i++){
     int x = bitRead(number,i);
     int l = bitRead(number,i+1);
-    if (x == l) {bitWrite(number_,i+1,0);}
-    else {bitWrite(number_,i+1,1);}
-    ;}
+    if (x == l) {int y=bitWrite(number_,i+1,0);}
+    else {int y=bitWrite(number_,i+1,1);}
+  ;}
   Serial.println(number_);
   /*int x = bitRead(number,0);
   Serial.println(x);
