@@ -10,10 +10,8 @@ void setup() {
     z = z/2;
   }
 }
-
 void loop() {
   x = analogRead(A0);
   if (x>z) {digitalWrite(12,LOW);}
   else {digitalWrite(12,HIGH);}
-
 }
