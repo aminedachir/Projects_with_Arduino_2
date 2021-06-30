@@ -5,6 +5,7 @@ void setup() {
   pinMode(12,OUTPUT);
   while(millis() < 5000){
     max_ldr = max(max_ldr, analogRead(A0);
+    min_ldr = min(min_ldr, analogRead(A0);
   }
 }
 
