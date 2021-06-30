@@ -13,6 +13,7 @@ void setup() {
 
 void loop() {
   x = analogRead(A0);
-  if () {;}
+  if (x>z) {digitalWrite(12,LOW);}
+  else {digitalWrite(12,HIGH);}
 
 }
