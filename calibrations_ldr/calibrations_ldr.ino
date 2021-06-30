@@ -12,5 +12,7 @@ void setup() {
 }
 
 void loop() {
+  x = analogRead(A0);
+  if () {;}
 
 }
