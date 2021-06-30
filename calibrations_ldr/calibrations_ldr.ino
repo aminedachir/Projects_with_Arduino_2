@@ -6,6 +6,8 @@ void setup() {
   while(millis() < 5000){
     max_ldr = max(max_ldr, analogRead(A0);
     min_ldr = min(min_ldr, analogRead(A0);
+    z = max_ldr+min_ldr;
+    z = z/2;
   }
 }
 
