@@ -2,5 +2,5 @@ void setup() {
   pinMode(10,OUTPUT);
 }
 void loop() {
-  digitalWrite(10,HIGH);
+  analogWrite(10,200);
 }
