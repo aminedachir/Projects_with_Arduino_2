@@ -1,6 +1,6 @@
 void setup() {
-  digitalRead(10,OUTPUT);
+  pinMode(10,OUTPUT);
 }
 void loop() {
-  digitalWrite(10,1);
+  digitalRead(10,1);
 }
