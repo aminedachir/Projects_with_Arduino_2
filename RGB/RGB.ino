@@ -1,5 +1,6 @@
 void setup() {
-  analogRead(10,OUTPUT);
+  digitalRead(10,OUTPUT);
 }
 void loop() {
+  digitalWrite(10,1);
 }
