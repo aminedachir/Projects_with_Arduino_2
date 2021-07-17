@@ -1,10 +1,14 @@
-unsigned long T1 = 0;
+unsigned long T1,T2;
+bool s = 0;
 void setup() {
-  Serial.begin(9600);
+  pinMode(13,OUTPUT);
 }
 
 void loop() {
   T1 = millis();
-  Serial.println(T1);
-
+  if (T1>T2+500){
+    s = !s;
+    T2 = T1;    
+  }
+  digitalWrite(13,s);
 }
