@@ -8,7 +8,7 @@ void loop() {
   T1 = millis();
   if (T1>T2+500){
     s = !s;
-    T2 = T1;    
+    T2 = T1;   
+    digitalWrite(13,s); 
   }
-  digitalWrite(13,s);
 }
