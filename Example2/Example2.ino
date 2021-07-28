@@ -4,6 +4,7 @@ void setup()
 }
 void loop()
 {
+  
   int x = analogRead(A0);
   digitalWrite(13,HIGH);
   delay(x);
