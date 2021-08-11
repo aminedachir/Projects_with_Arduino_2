@@ -1,6 +1,5 @@
 #include <Adafruit_NeoPixel.h>
 #define LED_PIN    5
-int i;
 int a = 250;
 int b = 250;
 int c = 50;
@@ -18,10 +17,4 @@ void loop() {
     colorWipe(strip.Color(a,  b,   0), 50);  
     }
 }
-void colorWipe(uint32_t color, int wait) {
-  for(int i=0; i<strip.numPixels(); i++) { 
-    strip.setPixelColor(i, color);        
-    strip.show();                        
-    delay(wait);                           
-  }
-  }
+void colorWipe(uint32_t color, int wait) {}
