@@ -6,6 +6,7 @@
 #define LED_COUNT 60
 int a = 0;
 int b = 0;
+int c = 0;
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 void setup() {
 #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
@@ -13,19 +14,12 @@ void setup() {
 #endif
   strip.begin();           
   strip.show();            
-  strip.setBrightness(50); 
+  strip.setBrightness(255); 
 }
 void loop() {
-  for (int i=0;i<5;i++) {
-    colorWipe(strip.Color(a,   a,   a), 250); 
-    colorWipe(strip.Color(  0, 0,   0), 50); 
-    a = a + 50;
-  }
-  delay(200);
-  for (int c=0;c<5;c++) {
-    colorWipe(strip.Color(b, b-10, b-5),50);
-    b = b + 50;
-  }
+  colorWipe(strip.Color(a,  0,   0), 50);  
+  a = a + 25;
+  if (a == 250) {colorWipe(strip.Color(0,b,0),50);b=b+25;}
 }
 void colorWipe(uint32_t color, int wait) {
   for(int i=0; i<strip.numPixels(); i++) {
