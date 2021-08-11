@@ -1,5 +1,5 @@
 #include <Adafruit_NeoPixel.h>
-#define LED_PIN    5
+#define LED_PIN   5
 void setup() {
 }
 void loop() {
