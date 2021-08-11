@@ -23,7 +23,7 @@ void loop() {
   }
   delay(200);
   for (int c=0;c<5;c++) {
-    colorWipe(strip.Color(b, b-20, b-10),50);
+    colorWipe(strip.Color(b, b-10, b-5),50);
     b = b + 50;
   }
 }
