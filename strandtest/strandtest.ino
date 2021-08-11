@@ -1,6 +1,5 @@
 #include <Adafruit_NeoPixel.h>
 #define LED_PIN    5
-#define LED_COUNT 16
 int a = 250;
 int b = 0;
 int c = 0;
