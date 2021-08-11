@@ -7,15 +7,15 @@ void setup() {
 }
 void loop() {
   for (int i=0;i<50;i++){
-    delay(500);
     Adafruit_NeoPixel strip(i , LED_PIN);
+    colorWipe(strip.Color(a,  b,   0), 50); 
+    delay(1000);
     strip.begin();           
     strip.show();            
     strip.setBrightness(255);
     colorWipe(strip.Color(a,  b,   0), 50);  
-    a = a - 25;
-    if (a==25) {b = b + 25;}
+    //a = a - 25;
+    //if (a==25) {b = b + 25;}
     }
-  delay(2000);
 }
 void colorWipe(uint32_t color, int wait) {}
