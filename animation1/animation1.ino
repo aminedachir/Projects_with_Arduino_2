@@ -19,9 +19,10 @@ void loop() {
   colorWipe(strip.Color(  0,   0, 255), 50); 
 }
 void colorWipe(uint32_t color, int wait) {
-  for(int i=0; i<strip.numPixels(); i++) { // For each pixel in strip...
-    strip.setPixelColor(i, color);         //  Set pixel's color (in RAM)
-    strip.show();                          //  Update strip to match
-    delay(300);                           //  Pause for a moment
+  for(int i=0; i<strip.numPixels(); i++) { 
+    strip.setPixelColor(i, color);        
+    strip.show();                          
+    delay(250);
   }
+  delay(1000);
 }
