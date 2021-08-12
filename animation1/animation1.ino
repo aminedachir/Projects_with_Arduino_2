@@ -14,18 +14,18 @@ void setup() {
   strip.setBrightness(50);
 }
 void loop() {
-  colorWipe(strip.Color(  255,   255, 255), 50);
-  colorWipe(strip.Color(  155,   255, 200), 50);
-  colorWipe(strip.Color(200,   150,   0), 50);
-  colorWipe(strip.Color(  0, 255,   100), 50); 
-  colorWipe(strip.Color(  0, 255,   100), 50);
-  colorWipe(strip.Color(  0,   0, 255), 50);  
+  animation1(strip.Color(  255,   255, 255), 50);
+  animation1(strip.Color(  155,   255, 200), 50);
+  animation1(strip.Color(200,   150,   0), 50);
+  animation1(strip.Color(  0, 255,   100), 50); 
+  animation1(strip.Color(  0, 255,   0), 50);
+  animation1(strip.Color(  0,   0, 255), 50);  
 }
-void colorWipe(uint32_t color, int wait) {
+void animation1(uint32_t color, int wait) {
   for(int i=0; i<strip.numPixels(); i++) { 
     strip.setPixelColor(i, color);        
     strip.show();                          
     delay(250);
   }
   delay(1000);
-}
+} 
