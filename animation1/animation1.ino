@@ -14,14 +14,14 @@ void setup() {
   strip.setBrightness(50);
 }
 void loop() {
-  animation1(strip.Color(  255,   255, 255), 50);
-  animation1(strip.Color(  155,   255, 200), 50);
-  animation1(strip.Color(200,   150,   0), 50);
-  animation1(strip.Color(  0, 255,   100), 50); 
-  animation1(strip.Color(  0, 255,   0), 50);
-  animation1(strip.Color(  0,   0, 255), 50);  
+  animation1(strip.Color(  255,   255, 255));
+  animation1(strip.Color(  155,   255, 200));
+  animation1(strip.Color(200,   150,   0));
+  animation1(strip.Color(  0, 255,   100)); 
+  animation1(strip.Color(  0, 255,   0));
+  animation1(strip.Color(  0,   0, 255));  
 }
-void animation1(uint32_t color, int wait) {
+void animation1(uint32_t color) {
   for(int i=0; i<strip.numPixels(); i++) { 
     strip.setPixelColor(i, color);        
     strip.show();                          
@@ -29,3 +29,4 @@ void animation1(uint32_t color, int wait) {
   }
   delay(1000);
 } 
+void animation2
