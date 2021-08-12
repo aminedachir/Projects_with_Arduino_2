@@ -12,21 +12,21 @@ void setup() {
   strip.begin(); 
   strip.show(); 
   strip.setBrightness(50);
+  animation1(strip.Color(  255,   255, 255));
+  animation1(strip.Color(  0,   0, 0));
 }
 void loop() {
-  animation1(strip.Color(  255,   255, 255));
-  animation1(strip.Color(  155,   255, 200));
-  animation1(strip.Color(200,   150,   0));
-  animation1(strip.Color(  0, 255,   100)); 
-  animation1(strip.Color(  0, 255,   0));
-  animation1(strip.Color(  0,   0, 255));  
+  //animation1(strip.Color(200,   150,   0));
+  //animation1(strip.Color(  0, 255,   100)); 
+  //animation1(strip.Color(  0, 255,   0));
+  //animation1(strip.Color(  0,   0, 255));  
 }
 void animation1(uint32_t color) {
   for(int i=0; i<strip.numPixels(); i++) { 
     strip.setPixelColor(i, color);        
     strip.show();                          
     delay(250);
+    if (i==17) {strip.begin();strip.show();strip.setBrightness(0);}
   }
-  delay(1000);
 } 
-void animation2
+//void animation2
