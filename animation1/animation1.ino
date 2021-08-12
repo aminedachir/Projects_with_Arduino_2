@@ -15,8 +15,10 @@ void setup() {
 }
 void loop() {
   colorWipe(strip.Color(  255,   255, 255), 50);
-  colorWipe(strip.Color(255,   0,   0), 50);
-  colorWipe(strip.Color(  0, 255,   0), 50); 
+  colorWipe(strip.Color(  155,   255, 200), 50);
+  colorWipe(strip.Color(200,   150,   0), 50);
+  colorWipe(strip.Color(  0, 255,   100), 50); 
+  colorWipe(strip.Color(  0, 255,   100), 50);
   colorWipe(strip.Color(  0,   0, 255), 50);  
 }
 void colorWipe(uint32_t color, int wait) {
