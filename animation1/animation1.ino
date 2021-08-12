@@ -3,7 +3,7 @@
  #include <avr/power.h>
 #endif
 #define LED_PIN    5
-#define LED_COUNT 60
+#define LED_COUNT 17
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 void setup() {
 #if defined(__AVR_ATtiny85__) && (F_CPU == 16000000)
