@@ -22,6 +22,6 @@ void colorWipe(uint32_t color, int wait) {
   for(int i=0; i<strip.numPixels(); i++) { // For each pixel in strip...
     strip.setPixelColor(i, color);         //  Set pixel's color (in RAM)
     strip.show();                          //  Update strip to match
-    delay(200);                           //  Pause for a moment
+    delay(300);                           //  Pause for a moment
   }
 }
