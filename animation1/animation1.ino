@@ -9,9 +9,9 @@ void setup() {
   strip.begin(); 
   strip.show(); 
   strip.setBrightness(255);
-  //animation1(strip.Color(  255,   255, 255),450);
+  //animation_1(strip.Color(  255,   255, 255),450);
   animation_2(10);
-  animation1(strip.Color(  0,   0, 0),0);
+  animation_1(strip.Color(  0,   0, 0),0);
 }
 void loop() {
   //animation1(strip.Color(200,   150,   0));
@@ -19,7 +19,7 @@ void loop() {
   //animation1(strip.Color(  0, 255,   0));
   //animation1(strip.Color(  0,   0, 255));  
 }
-void animation1(uint32_t color,int wait) {
+void animation_1(uint32_t color,int wait) {
   for(int i=0; i<strip.numPixels(); i++) { 
     strip.setPixelColor(i, color);        
     strip.show();                          
