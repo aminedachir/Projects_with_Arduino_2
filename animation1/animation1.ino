@@ -14,9 +14,10 @@ void setup() {
   strip.setBrightness(50);
 }
 void loop() {
+  colorWipe(strip.Color(  255,   255, 255), 50);
   colorWipe(strip.Color(255,   0,   0), 50);
   colorWipe(strip.Color(  0, 255,   0), 50); 
-  colorWipe(strip.Color(  0,   0, 255), 50); 
+  colorWipe(strip.Color(  0,   0, 255), 50);  
 }
 void colorWipe(uint32_t color, int wait) {
   for(int i=0; i<strip.numPixels(); i++) { 
