@@ -9,8 +9,8 @@ void setup() {
   strip.begin(); 
   strip.show(); 
   strip.setBrightness(255);
-  animation1(strip.Color(  255,   255, 255),450);
-  //rainbow(10);
+  //animation1(strip.Color(  255,   255, 255),450);
+  animation_2(10);
   animation1(strip.Color(  0,   0, 0),0);
 }
 void loop() {
@@ -26,7 +26,7 @@ void animation1(uint32_t color,int wait) {
     delay(wait);
   }
 } 
-void rainbow(int wait) {
+void animation_2(int wait) {
   for(long firstPixelHue = 0; firstPixelHue < 5*65536; firstPixelHue += 256) {
     for(int i=0; i<strip.numPixels(); i++) {
       int pixelHue = firstPixelHue + (i * 65536L / strip.numPixels());
