@@ -13,15 +13,12 @@ void setup() {
   //animation_2(7.5);
   animation_1(strip.Color(  0,   0, 0),400);
 }
-void loop() {
-  //animation1(strip.Color(200,   150,   0));
-  //animation1(strip.Color(  0, 255,   100)); 
-  //animation1(strip.Color(  0, 255,   0));
-  //animation1(strip.Color(  0,   0, 255));    
+void loop() {   
 }
 void animation_1(uint32_t color,int wait) {
   for(int i=0; i<strip.numPixels(); i++) { 
-    strip.setPixelColor(i, color);        
+    strip.setPixelColor(i, color);
+    //strip.setPixelColor(i+1, color);
     strip.show();                          
     delay(wait);
   }
