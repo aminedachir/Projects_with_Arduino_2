@@ -3,7 +3,7 @@
  #include <avr/power.h>
 #endif
 #define LED_PIN    5
-#define LED_COUNT 3
+#define LED_COUNT 15
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN, NEO_GRB + NEO_KHZ800);
 void setup() {
   strip.begin(); 
@@ -19,7 +19,6 @@ void loop() {
 void animation_1(uint32_t color,int wait) {
   for(int i=0; i<strip.numPixels(); i++) { 
     strip.setPixelColor(i, color);
-    //strip.setPixelColor(i+1, color);
     strip.show();                          
     delay(wait);
   }
@@ -35,9 +34,4 @@ void animation_2(int wait) {
   }
 }
 void animation_3(int wait) {
-  for (int i=0;i<3;i++) {
-      animation_1(strip.Color(  255,   255, 255),400);
-    }
-  //animation_1(strip.Color(  255,   255, 255),400);
-  animation_1(strip.Color(  0,   0, 0),400);
 }
