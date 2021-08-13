@@ -37,11 +37,14 @@ void animation_2(int wait) {
   }
 }
 void animation_3(uint32_t color,int wait) {
-  for (int i=0;i<3;i++) {
-    for(int i=0; i<3; i++) { 
+  for(int i=0; i<3; i++) { 
     strip.setPixelColor(i, color);
     strip.show();                          
     delay(wait);
-    }
+  }
+  for(int i=3; i<6; i++) { 
+    strip.setPixelColor(i, color);
+    strip.show();                          
+    delay(wait);
   }
 }
