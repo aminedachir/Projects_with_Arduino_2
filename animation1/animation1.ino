@@ -17,9 +17,9 @@ void setup() {
   //delay(500);
   //three_leds(strip.Color(  0,   0, 0),400);
   //animation_3(500);
-  //two_two(strip.Color(  255,   30, 0),600);
+  two_two(strip.Color(  255,   30, 0),600);
   //last_first(strip.Color(  255,   30, 0),1000);
-  setBrightness_(strip.Color(  255,   30, 0),500);
+  //setBrightness_(strip.Color(  255,   30, 0),500);
 }
 void loop() {   
 }
