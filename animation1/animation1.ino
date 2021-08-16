@@ -4,7 +4,7 @@
 #endif
 #define LED_PIN    5
 int brightness = 5;
-#define LED_COUNT 50
+#define LED_COUNT 15
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN,NEO_GRB + NEO_KHZ800);
 void setup() {
   strip.begin(); 
@@ -20,9 +20,13 @@ void setup() {
   //two_two(strip.Color(  255,   30, 0),600);
   //last_first(strip.Color(  255,   30, 0),1000);
   //setBrightness_(strip.Color(  255,   30, 0),500);
-  five_leds(strip.Color(  255,   30, 0),600);
+  //five_leds(strip.Color(  255,   30, 0),100);
 }
 void loop() {   
+  int a = random(0,255);
+  int b = random(0,255);
+  int c = random(0,255);
+  five_leds(strip.Color(  a,   b, c),100);
 }
 void animation_1(uint32_t color,int wait) {
   for(int i=0; i<LED_COUNT; i++) { 
@@ -102,6 +106,14 @@ void five_leds (uint32_t color,int wait) {
     strip.setPixelColor(i, strip.Color(a,b,c));
     strip.show();                          
     delay(wait);
+    if (i==LED_COUNT-1) {
+      delay(500);
+      for(int i=0; i<LED_COUNT; i++) {
+        strip.setPixelColor(i, color);
+        strip.show();                          
+        delay(wait);
+        }
+    }
   }
   
   }
