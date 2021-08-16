@@ -107,7 +107,7 @@ void random_colors (uint32_t color,int wait) {
     strip.show();                          
     delay(wait);
     if (i==LED_COUNT-1) {
-      delay(100);
+      delay(200);
       for(int i=0; i<LED_COUNT; i++) {
         strip.setPixelColor(i, color);
         strip.show();                          
