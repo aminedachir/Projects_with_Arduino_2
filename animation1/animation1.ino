@@ -100,14 +100,14 @@ void setBrightness_(uint32_t color,int wait) {
 
 void five_leds (uint32_t color,int wait) {
   for(int i=0; i<LED_COUNT; i++) { 
-    int a = 25;
-    int b = 50;
-    int c = 75;
+    int a = random(0,255);
+    int b = random(0,255);
+    int c = random(0,255);
     strip.setPixelColor(i, strip.Color(a,b,c));
     strip.show();                          
     delay(wait);
     if (i==LED_COUNT-1) {
-      delay(500);
+      delay(100);
       for(int i=0; i<LED_COUNT; i++) {
         strip.setPixelColor(i, color);
         strip.show();                          
