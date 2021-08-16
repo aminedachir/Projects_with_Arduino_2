@@ -17,9 +17,10 @@ void setup() {
   //delay(500);
   //three_leds(strip.Color(  0,   0, 0),400);
   //animation_3(500);
-  two_two(strip.Color(  255,   30, 0),600);
+  //two_two(strip.Color(  255,   30, 0),600);
   //last_first(strip.Color(  255,   30, 0),1000);
   //setBrightness_(strip.Color(  255,   30, 0),500);
+  five_leds(strip.Color(  255,   30, 0),600);
 }
 void loop() {   
 }
@@ -92,3 +93,15 @@ void setBrightness_(uint32_t color,int wait) {
     brightness = brightness + 20;
 }
 }
+
+void five_leds (uint32_t color,int wait) {
+  for(int i=0; i<LED_COUNT; i++) { 
+    int a = 25;
+    int b = 50;
+    int c = 75;
+    strip.setPixelColor(i, strip.Color(a,b,c));
+    strip.show();                          
+    delay(wait);
+  }
+  
+  }
