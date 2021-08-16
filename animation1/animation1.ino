@@ -26,7 +26,7 @@ void loop() {
   int a = random(0,255);
   int b = random(0,255);
   int c = random(0,255);
-  andom_colors(strip.Color(  a,   b, c),100);
+  random_colors(strip.Color(  a,   b, c),100);
 }
 void animation_1(uint32_t color,int wait) {
   for(int i=0; i<LED_COUNT; i++) { 
