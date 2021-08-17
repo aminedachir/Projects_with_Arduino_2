@@ -153,7 +153,7 @@ void __rainbow__(uint8_t wait) {
       //strip.show();
       //delay(wait);
     }
-}*/
+}
 uint32_t Wheel(byte WheelPos) {
   if(WheelPos <85) {
     return strip.Color(WheelPos * 3, 255-WheelPos*3,0);
@@ -167,7 +167,7 @@ uint32_t Wheel(byte WheelPos) {
     return strip.Color(0,WheelPos * 3, 255-WheelPos*3);
   }
   }
-  
+*/ 
 void stick_stack(int wait) {
   for(int i=0; i<LED_COUNT/2; i++) { 
     int a = random(0,255);
@@ -190,6 +190,7 @@ void stick_stack(int wait) {
       }
   }
   }
+  /*
 void stick_stack1(int wait) {
   //for(int i=0; i<LED_COUNT/2; i++) { 
   uint16_t i,j;
@@ -214,3 +215,4 @@ void stick_stack1(int wait) {
   }
   }
 }
+*/
