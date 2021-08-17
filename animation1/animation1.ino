@@ -38,17 +38,13 @@ void animation_1(uint32_t color,int wait) {
     delay(wait);
   }
 } 
-void animation_2(int wait) {
+void rainbow_2(int wait) {
   for(int i=0; i<strip.numPixels(); i++) {
     for(long firstPixelHue = 0; firstPixelHue < 5*65536; firstPixelHue += 256) {
       int pixelHue = i * 65536L / strip.numPixels();
       strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
-      //delay(50);
       strip.show();
-      //delay(wait);
     }
-    //strip.show();
-    //delay(wait); 
   }
 }
 void three_leds(uint32_t color,int wait) {
