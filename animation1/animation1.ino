@@ -166,3 +166,5 @@ uint32_t Wheel(byte WheelPos) {
     return strip.Color(0,WheelPos * 3, 255-WheelPos*3);
   }
   }
+
+void stick_stack(uint32_t color,int wait)
