@@ -11,7 +11,8 @@ void setup() {
   strip.show(); 
   strip.setBrightness(55);
   //animation_1(strip.Color(  255,   155, 255),200);
-  rainbow_2(2);
+  //rainbow_2(2);
+  __rainbow__(2);
   //animation_1(strip.Color(  0,   0, 0),200);
   //three_leds(strip.Color(  155,   155, 0),100);
   //delay(500);
@@ -47,8 +48,8 @@ void animation_1(uint32_t color,int wait) {
 } 
 void rainbow_2(int wait) {
   for(int i=0; i<=LED_COUNT; i++) {
-    for(long firstPixelHue = 0; firstPixelHue < 5*65536; firstPixelHue += 256) {
-      int pixelHue = i * 65536L / LED_COUNT;
+    for(long firstPixelHue = 0; firstPixelHue < 5*65536; firstPixelHue += 556) {
+      int pixelHue =i * 65536L / LED_COUNT;
       strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
       strip.show();
       //delay(wait);
@@ -128,5 +129,40 @@ void random_colors (uint32_t color,int wait) {
         delay(wait);
         }
     }
+  }
+  }
+void __rainbow__(uint8_t wait) {
+  uint16_t i,j;
+  for(j=0;j<255;j++) {
+    for(i=0;i<=LED_COUNT;i++) {
+      j+=15;
+      strip.setPixelColor(i,Wheel((i*1+j)&255));
+      strip.show();
+      delay(100);
+      if (i==LED_COUNT) {
+        for (int i=0;i<LED_COUNT;i++) {
+          strip.setPixelColor(i,strip.Color(0,0,0));
+          strip.show();
+          delay(200);
+      j=255;
+        }
+        }
+      }
+      //strip.show();
+      //delay(wait);
+    }
+  
+}
+uint32_t Wheel(byte WheelPos) {
+  if(WheelPos <85) {
+    return strip.Color(WheelPos * 3, 255-WheelPos*3,0);
+  }
+  else if(WheelPos <170) {
+    WheelPos -=85;
+    return strip.Color(255 - WheelPos * 3, 0,WheelPos*3);
+  }
+  else {
+    WheelPos -=170;
+    return strip.Color(0,WheelPos * 3, 255-WheelPos*3);
   }
   }
