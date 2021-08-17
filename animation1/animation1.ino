@@ -4,7 +4,7 @@
 #endif
 #define LED_PIN    5
 int brightness = 5;
-#define LED_COUNT 15
+#define LED_COUNT 10
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN,NEO_GRB + NEO_KHZ800);
 void setup() {
   strip.begin(); 
