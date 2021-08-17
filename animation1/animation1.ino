@@ -9,7 +9,7 @@ Adafruit_NeoPixel strip(LED_COUNT, LED_PIN,NEO_GRB + NEO_KHZ800);
 void setup() {
   strip.begin(); 
   strip.show(); 
-  strip.setBrightness(255);
+  strip.setBrightness(55);
   //animation_1(strip.Color(  255,   155, 255),200);
   animation_2(2);
   //animation_1(strip.Color(  0,   0, 0),200);
@@ -41,11 +41,11 @@ void animation_1(uint32_t color,int wait) {
 void animation_2(int wait) {
   for(int i=0; i<strip.numPixels(); i++) {
     for(long firstPixelHue = 0; firstPixelHue < 5*65536; firstPixelHue += 256) {
-      //int pixelHue = random(0,255);
-      strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(firstPixelHue)));
+      int pixelHue = i * 65536L / strip.numPixels();
+      strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
       //delay(50);
       strip.show();
-      delay(wait);
+      //delay(wait);
     }
     //strip.show();
     //delay(wait); 
