@@ -11,7 +11,7 @@ void setup() {
   strip.show(); 
   strip.setBrightness(55);
   //animation_1(strip.Color(  255,   155, 255),200);
-  stick_stack(500);
+  stick_stack1(500);
   //rainbow_2(2);
   //__rainbow__(2);
   //animation_1(strip.Color(  0,   0, 0),200);
@@ -153,7 +153,7 @@ void __rainbow__(uint8_t wait) {
       //strip.show();
       //delay(wait);
     }
-}
+}*/
 uint32_t Wheel(byte WheelPos) {
   if(WheelPos <85) {
     return strip.Color(WheelPos * 3, 255-WheelPos*3,0);
@@ -167,7 +167,7 @@ uint32_t Wheel(byte WheelPos) {
     return strip.Color(0,WheelPos * 3, 255-WheelPos*3);
   }
   }
-  */
+  
 void stick_stack(int wait) {
   for(int i=0; i<LED_COUNT/2; i++) { 
     int a = random(0,255);
@@ -190,3 +190,27 @@ void stick_stack(int wait) {
       }
   }
   }
+void stick_stack1(int wait) {
+  //for(int i=0; i<LED_COUNT/2; i++) { 
+  uint16_t i,j;
+  for(j=0;j<255;j++) {
+    for(i=0;i<=LED_COUNT/2;i++) {
+      j+=15;
+      strip.setPixelColor(i,Wheel((i*1+j)&255));
+      strip.show();
+      delay(100);
+    if (i==LED_COUNT/2-1) {
+      for (int i=0;i<LED_COUNT;i++) {
+        int a = random(0,255);
+        int b = random(0,255);
+        int c = random(0,255);
+        //strip.setPixelColor(i+1,color);
+        strip.setPixelColor(i,strip.Color(0,0,0));
+        strip.setPixelColor(i+LED_COUNT/2,strip.Color(a,b,c));
+        strip.show();                          
+        delay(wait);
+        }
+      }
+  }
+  }
+}
