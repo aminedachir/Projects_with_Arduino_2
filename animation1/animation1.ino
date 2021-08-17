@@ -11,7 +11,7 @@ void setup() {
   strip.show(); 
   strip.setBrightness(55);
   //animation_1(strip.Color(  255,   155, 255),200);
-  stick_stack1(500);
+  stick_stack(500);
   //rainbow_2(2);
   //__rainbow__(2);
   //animation_1(strip.Color(  0,   0, 0),200);
