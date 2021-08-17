@@ -45,7 +45,7 @@ void rainbow_2(int wait) {
       strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
       strip.show();
       //delay(wait);
-      
+      if (i==LED_COUNT-1) {strip.setPixelColor(i,strip.Color(0,0,0);}
     }
   }
 }
