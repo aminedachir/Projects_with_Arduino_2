@@ -11,7 +11,7 @@ void setup() {
   strip.show(); 
   strip.setBrightness(55);
   //animation_1(strip.Color(  255,   155, 255),200);
-  animation_2(2);
+  rainbow_2(2);
   //animation_1(strip.Color(  0,   0, 0),200);
   //three_leds(strip.Color(  155,   155, 0),100);
   //delay(500);
@@ -44,6 +44,7 @@ void rainbow_2(int wait) {
       int pixelHue = i * 65536L / strip.numPixels();
       strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
       strip.show();
+      //delay(wait);
     }
   }
 }
