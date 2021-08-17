@@ -178,9 +178,12 @@ void stick_stack(uint32_t color,int wait) {
     delay(wait);
     if (i==LED_COUNT/2-1) {
       for (int i=0;i<LED_COUNT;i++) {
+        int a = random(0,255);
+        int b = random(0,255);
+        int c = random(0,255);
         //strip.setPixelColor(i+1,color);
         strip.setPixelColor(i,strip.Color(0,0,0));
-        strip.setPixelColor(i+LED_COUNT/2,color);
+        strip.setPixelColor(i+LED_COUNT/2,strip.Color(a,b,c));
         strip.show();                          
         delay(wait);
         }
