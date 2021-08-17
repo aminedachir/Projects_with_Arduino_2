@@ -152,7 +152,6 @@ void __rainbow__(uint8_t wait) {
       //strip.show();
       //delay(wait);
     }
-  
 }
 uint32_t Wheel(byte WheelPos) {
   if(WheelPos <85) {
@@ -167,7 +166,6 @@ uint32_t Wheel(byte WheelPos) {
     return strip.Color(0,WheelPos * 3, 255-WheelPos*3);
   }
   }
-
 void stick_stack(uint32_t color,int wait) {
   for(int i=0; i<LED_COUNT/2; i++) { 
     int a = random(0,255);
