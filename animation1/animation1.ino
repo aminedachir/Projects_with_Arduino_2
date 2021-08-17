@@ -46,13 +46,13 @@ void animation_1(uint32_t color,int wait) {
   }
 } 
 void rainbow_2(int wait) {
-  for(int i=0; i<LED_COUNT; i++) {
+  for(int i=0; i<=LED_COUNT; i++) {
     for(long firstPixelHue = 0; firstPixelHue < 5*65536; firstPixelHue += 256) {
       int pixelHue = i * 65536L / LED_COUNT;
       strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
       strip.show();
       //delay(wait);
-      if (i==LED_COUNT-1) {
+      if (i==LED_COUNT) {
         for (int i=0;i<LED_COUNT;i++) {
           strip.setPixelColor(i,strip.Color(0,0,0));
           strip.show();
