@@ -36,6 +36,13 @@ void animation_1(uint32_t color,int wait) {
     strip.setPixelColor(i, strip.Color(a,b,c));
     strip.show();                          
     delay(wait);
+    if (i==LED_COUNT-1) {
+      for (int i=0;i<LED_COUNT;i++) {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.show();                          
+        delay(wait);
+        }
+      }
   }
 } 
 void rainbow_2(int wait) {
@@ -45,11 +52,11 @@ void rainbow_2(int wait) {
       strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
       strip.show();
       //delay(wait);
-      if (i==LED_COUNT) {
+      if (i==LED_COUNT-1) {
         for (int i=0;i<LED_COUNT;i++) {
           strip.setPixelColor(i,strip.Color(0,0,0));
           strip.show();
-          delay(10);
+          delay(200);
         }
         }
     }
