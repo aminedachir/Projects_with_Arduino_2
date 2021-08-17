@@ -4,15 +4,16 @@
 #endif
 #define LED_PIN    5
 int brightness = 5;
-#define LED_COUNT 10
+#define LED_COUNT 15
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN,NEO_GRB + NEO_KHZ800);
 void setup() {
   strip.begin(); 
   strip.show(); 
   strip.setBrightness(55);
   //animation_1(strip.Color(  255,   155, 255),200);
+  stick_stack(strip.Color(  255,   155, 255),500);
   //rainbow_2(2);
-  __rainbow__(2);
+  //__rainbow__(2);
   //animation_1(strip.Color(  0,   0, 0),200);
   //three_leds(strip.Color(  155,   155, 0),100);
   //delay(500);
@@ -167,4 +168,22 @@ uint32_t Wheel(byte WheelPos) {
   }
   }
 
-void stick_stack(uint32_t color,int wait)
+void stick_stack(uint32_t color,int wait) {
+  for(int i=0; i<LED_COUNT/2; i++) { 
+    int a = random(0,255);
+    int b = random(0,255);
+    int c = random(0,255);
+    strip.setPixelColor(i, strip.Color(a,b,c));
+    strip.show();                          
+    delay(wait);
+    if (i==LED_COUNT/2-1) {
+      for (int i=0;i<LED_COUNT;i++) {
+        //strip.setPixelColor(i+1,color);
+        strip.setPixelColor(i,strip.Color(0,0,0));
+        strip.setPixelColor(i+LED_COUNT/2,color);
+        strip.show();                          
+        delay(wait);
+        }
+      }
+  }
+  }
