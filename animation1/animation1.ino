@@ -5,6 +5,7 @@
 #define LED_PIN    5
 int brightness = 5;
 int green=0;
+int green_=0;
 int red=255;
 int blue=0;
 #define LED_COUNT 18
@@ -224,11 +225,12 @@ void stick_stack1(int wait) {
 */
 void rainbow_leds (int wait) {
   for(int i=0; i<LED_COUNT; i++) {
-    if(green < 255) { 
+    if(green_ < 255) { 
       Serial.print("green");
       Serial.println(green);
       strip.setPixelColor(i,strip.Color(green,red,blue));
       green=green+85;
+      green_=green_+85;
     }
     else if (green == 255 and red > 0) {
       Serial.print("red");
@@ -245,15 +247,15 @@ void rainbow_leds (int wait) {
       blue=blue+85;
     }
    
-  /*  else if (blue == 255 and green > 0) {
+     else if (blue == 255 and green > 0) {
       Serial.print("blue");
       Serial.println(blue);
       Serial.print("green");
       Serial.println(green);
       strip.setPixelColor(i,strip.Color(green,red,blue));
-      green=green+85;
+      green=green-85;
       }
-      */
+      
     strip.show();                          
     delay(wait);
     }
