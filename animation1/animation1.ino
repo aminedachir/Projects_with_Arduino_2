@@ -240,18 +240,6 @@ void rainbow_leds (int wait) {
       strip.setPixelColor(i,strip.Color(green,red,blue));
       }
   }
-    //strip.setPixelColor(i,strip.Color(green,red,blue));
-    //green += 62;
     strip.show();                          
     delay(wait);
-    //if (green > 245) {red-=62;strip.setPixelColor(i,strip.Color(green,red,blue));Serial.print(red);Serial.println("red");}
-      //for (int i=5;i<LED_COUNT;i++) {
-      //red-=63.75;
-        //strip.setPixelColor(i,strip.Color(green,red,blue));
-        //delay(300);
-        //}
-      //}
-    //delay(300);
     }
-  
-//  }
