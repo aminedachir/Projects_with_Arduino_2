@@ -247,13 +247,17 @@ void rainbow_leds (int wait) {
       blue=blue+85;
     }
    
-     else if (blue == 255 and green > 0) {
+    else if (blue == 255 and green > 0) {
       Serial.print("blue");
       Serial.println(blue);
       Serial.print("green");
       Serial.println(green);
       strip.setPixelColor(i,strip.Color(green,red,blue));
       green=green-85;
+      }
+    else if (green == 0) {
+      strip.setPixelColor(i,strip.Color(green,red,blue));
+      red=red+85;
       }
       
     strip.show();                          
