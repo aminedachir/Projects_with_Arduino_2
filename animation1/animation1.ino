@@ -219,11 +219,12 @@ void stick_stack1(int wait) {
 */
 
 void rainbow_leds (int wait) {
+  int green=0;
+  int red=255;
+  int blue=0;
   for (int i=0;i<LED_COUNT;i++) {
-    int green;
-    int red;
-    int blue;
-    strip.setPixelColor(i,strip.Color(,255,0));
+    strip.setPixelColor(i,strip.Color(green,red,blue));
+    green+=20;
     strip.show();
     }
   
