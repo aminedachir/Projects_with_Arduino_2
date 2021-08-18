@@ -222,7 +222,6 @@ void stick_stack1(int wait) {
   }
 }
 */
-
 void rainbow_leds (int wait) {
   for(int i=0; i<LED_COUNT; i++) {
     if(green < 250) { 
@@ -237,7 +236,19 @@ void rainbow_leds (int wait) {
       Serial.println(green);
       strip.setPixelColor(i,strip.Color(green,red,blue));
       }
-  }
+    else if (blue<255) {
+      Serial.println(blue);
+      strip.setPixelColor(i,strip.Color(green,red,blue));
+      blue=blue+51;
+    }
+    else if (blue == 255 and green > 0) {
+      red=red-51;
+      Serial.print("blue");
+      Serial.println(blue);
+      Serial.println(green);
+      strip.setPixelColor(i,strip.Color(green,red,blue));
+      }
     strip.show();                          
     delay(wait);
     }
+}
