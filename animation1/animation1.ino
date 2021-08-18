@@ -226,6 +226,7 @@ void rainbow_leds (int wait) {
     strip.setPixelColor(i,strip.Color(green,red,blue));
     green+=20;
     strip.show();
+    delay(wait);
     }
   
   }
