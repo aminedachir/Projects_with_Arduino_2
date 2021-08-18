@@ -216,3 +216,10 @@ void stick_stack1(int wait) {
   }
 }
 */
+
+void rainbow_leds (int wait) {
+  for (int i=0;i<LED_COUNT;i++) {
+    
+    }
+  
+  }
