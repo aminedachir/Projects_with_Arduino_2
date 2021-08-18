@@ -4,11 +4,11 @@
 #endif
 #define LED_PIN    5
 int brightness = 5;
-int green=0;
-int green_=0;
-int red=255;
-int blue=0;
-#define LED_COUNT 18
+float green=0;
+float green_=0;
+float red=255;
+float blue=0;
+#define LED_COUNT 16
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN,NEO_GRB + NEO_KHZ800);
 void setup() {
   Serial.begin(9600);
@@ -28,7 +28,7 @@ void setup() {
   //last_first(strip.Color(  255,   30, 0),1000);
   //setBrightness_(strip.Color(  255,   30, 0),500);
   //five_leds(strip.Color(  255,   30, 0),100);
-  rainbow_leds(10);
+  rainbow_leds(300);
 }
 void loop() {   
   //int a = random(0,255);
@@ -224,40 +224,48 @@ void stick_stack1(int wait) {
 }
 */
 void rainbow_leds (int wait) {
-  for(int i=0; i<LED_COUNT; i++) {
+  for(int i=0; i<=LED_COUNT; i++) {
+    float avg = LED_COUNT / 5;
+    float avg_led = 255/avg;
     if(green_ < 255) { 
-      Serial.print("green");
-      Serial.println(green);
+      Serial.print("avg");
+      Serial.println(avg_led);
       strip.setPixelColor(i,strip.Color(green,red,blue));
-      green=green+85;
-      green_=green_+85;
+      green=green+avg_led;
+      green_=green_+avg_led;
     }
     else if (green == 255 and red > 0) {
-      Serial.print("red");
-      Serial.println(red);
-      Serial.print("green");
-      Serial.println(green);
+      Serial.print("avg");
+      Serial.println(avg_led);
       strip.setPixelColor(i,strip.Color(green,red,blue));
-      red=red-85;
+      red=red-avg_led;
       }
     else if (blue<250) {
-      Serial.print("blue");
-      Serial.println(blue);
+      Serial.print("avg");
+      Serial.println(avg_led);
       strip.setPixelColor(i,strip.Color(green,red,blue));
-      blue=blue+85;
+      blue=blue+avg_led;
     }
    
     else if (blue == 255 and green > 0) {
-      Serial.print("blue");
-      Serial.println(blue);
-      Serial.print("green");
-      Serial.println(green);
+      Serial.print("avg");
+      Serial.println(avg_led);
+      //Serial.print("green");
+      //Serial.println(green);
       strip.setPixelColor(i,strip.Color(green,red,blue));
-      green=green-85;
+      green=green-avg_led;
       }
     else if (green == 0) {
       strip.setPixelColor(i,strip.Color(green,red,blue));
       red=red+85;
+      }
+    if (i==LED_COUNT) {
+      delay(500);
+      for (int i=0;i<LED_COUNT;i++) {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.show();                          
+        delay(wait);
+        }
       }
     strip.show();                          
     delay(wait);
