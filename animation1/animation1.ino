@@ -4,6 +4,9 @@
 #endif
 #define LED_PIN    5
 int brightness = 5;
+int green=0;
+int red=250;
+int blue=0;
 #define LED_COUNT 15
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN,NEO_GRB + NEO_KHZ800);
 void setup() {
@@ -23,13 +26,14 @@ void setup() {
   //last_first(strip.Color(  255,   30, 0),1000);
   //setBrightness_(strip.Color(  255,   30, 0),500);
   //five_leds(strip.Color(  255,   30, 0),100);
-  rainbow_leds(100);
+  //rainbow_leds(100);
 }
 void loop() {   
   //int a = random(0,255);
   //int b = random(0,255);
   //int c = random(0,255);
   //random_colors(strip.Color(  a,   b, c),100);
+  rainbow_leds(100);
 }
 void animation_1(uint32_t color,int wait) {
   for(int i=0; i<LED_COUNT; i++) { 
@@ -219,14 +223,34 @@ void stick_stack1(int wait) {
 */
 
 void rainbow_leds (int wait) {
-  int green=0;
-  int red=255;
-  int blue=0;
-  for (int i=0;i<LED_COUNT;i++) {
+  for(int i=0; i<=LED_COUNT; i++) { 
     strip.setPixelColor(i,strip.Color(green,red,blue));
-    green+=15;
-    strip.show();
-    //delay(wait);
-    }
-  
+    strip.show();                          
+    delay(wait);
+    if (i==LED_COUNT) {
+      green+=62,5;
+      for (int i=0;i<LED_COUNT;i++) {
+        strip.setPixelColor(i,strip.Color(green,red,blue));
+        strip.show();                          
+        delay(wait);}}
+    else if (green == 250) {
+      red-=62,5;
+      for (int i=0;i<LED_COUNT;i++) {
+        strip.setPixelColor(i,strip.Color(green,red,blue));
+        strip.show();                          
+        delay(wait);
+          }
+        }
+      }
   }
+    //if (green == 250) {
+      //for (int i=0;i<LED_COUNT/7;i++) {
+        //red-=125;
+        //strip.setPixelColor(i,strip.Color(green,red,blue));
+        //delay(300);
+  //      }
+//      }
+    //delay(300);
+//    }
+  
+//  }
