@@ -32,7 +32,7 @@ void setup() {
   //rainbow_leds(300);
   //loofi(200);
   //chargeur(100);
-  line(100);
+  //line(100);
 }
 void loop() {   
   //int a = random(0,255);
