@@ -28,7 +28,8 @@ void setup() {
   //last_first(strip.Color(  255,   30, 0),1000);
   //setBrightness_(strip.Color(  255,   30, 0),500);
   //five_leds(strip.Color(  255,   30, 0),100);
-  rainbow_leds(300);
+  //rainbow_leds(300);
+  loofi(100);
 }
 void loop() {   
   //int a = random(0,255);
@@ -271,3 +272,8 @@ void rainbow_leds (int wait) {
     delay(wait);
     }
 }
+
+void loofi (int wait) {
+  
+  
+  }
