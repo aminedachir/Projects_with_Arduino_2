@@ -29,7 +29,7 @@ void setup() {
   //setBrightness_(strip.Color(  255,   30, 0),500);
   //five_leds(strip.Color(  255,   30, 0),100);
   //rainbow_leds(300);
-  loofi(100);
+  loofi(200);
 }
 void loop() {   
   //int a = random(0,255);
@@ -274,20 +274,22 @@ void rainbow_leds (int wait) {
 }
 
 void loofi (int wait) {
-  for(int i=0; i<LED_COUNT; i++) { 
-    int a = random(0,255);
-    int b = random(0,255);
-    int c = random(0,255);
-    strip.setPixelColor(i, strip.Color(a,b,c));
+  for(int i=0; i<=LED_COUNT; i++) { 
+    strip.setPixelColor(i, strip.Color(200,200,200));
     strip.show();                          
     delay(wait);
-    if (i==LED_COUNT-1) {
+    if (i==LED_COUNT/2) {
       for (int i=0;i<LED_COUNT;i++) {
         strip.setPixelColor(i, strip.Color(0,0,0));
         strip.show();                          
         delay(wait);
         }
       }
-  }
-  
+     else if (i==LED_COUNT) {
+      for (int i=LED_COUNT/2+1;i<LED_COUNT;i++) {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.show();                          
+        delay(wait);
+        }}
+      }
   }
