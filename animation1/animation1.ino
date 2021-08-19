@@ -275,7 +275,6 @@ void rainbow_leds (int wait) {
     delay(wait);
     }
 }
-
 void loofi (int wait) {
   for(int i=0; i<=LED_COUNT; i++) { 
     strip.setPixelColor(i, strip.Color(200,200,200));
