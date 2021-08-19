@@ -274,7 +274,20 @@ void rainbow_leds (int wait) {
 }
 
 void loofi (int wait) {
-
-  
+  for(int i=0; i<LED_COUNT; i++) { 
+    int a = random(0,255);
+    int b = random(0,255);
+    int c = random(0,255);
+    strip.setPixelColor(i, strip.Color(a,b,c));
+    strip.show();                          
+    delay(wait);
+    if (i==LED_COUNT-1) {
+      for (int i=0;i<LED_COUNT;i++) {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.show();                          
+        delay(wait);
+        }
+      }
+  }
   
   }
