@@ -15,7 +15,7 @@ void setup() {
   Serial.begin(9600);
   strip.begin(); 
   strip.show(); 
-  strip.setBrightness(255);
+  strip.setBrightness(55);
   //animation_1(strip.Color(  255,   155, 255),200);
   //stick_stack(500);
   //rainbow_2(2);
@@ -25,13 +25,14 @@ void setup() {
   //delay(500);
   //three_leds(strip.Color(  0,   0, 0),400);
   //animation_3(500);
-  two_two(strip.Color(  255,   30, 0),600);
+  //two_two(strip.Color(  255,   30, 0),600);
   //last_first(strip.Color(  255,   30, 0),1000);
   //setBrightness_(strip.Color(  255,   30, 0),500);
   //five_leds(strip.Color(  255,   30, 0),100);
   //rainbow_leds(300);
   //loofi(200);
   //chargeur(100);
+  line(100);
 }
 void loop() {   
   //int a = random(0,255);
@@ -309,3 +310,16 @@ void chargeur(int wait) {
   }
   }
 }
+void line(int wait) {
+  for(int j=0; j<=LED_COUNT; j++) {
+    for(int i=0; i<=LED_COUNT; i++) { 
+      //for(int h=0; h<=LED_COUNT; h++) { 
+      strip.setPixelColor(i,strip.Color(255,255,255));
+      strip.setPixelColor(i+2, strip.Color(255,255,255));
+      strip.setPixelColor(i-1,strip.Color(0,0,0));
+      strip.setPixelColor(i+1,strip.Color(0,0,0));
+      strip.show();                          
+      delay(wait);
+  }
+  }
+  }}
