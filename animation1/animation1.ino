@@ -8,6 +8,7 @@ float green=0;
 float green_=0;
 float red=255;
 float blue=0;
+int rg=2;
 #define LED_COUNT 16
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN,NEO_GRB + NEO_KHZ800);
 void setup() {
@@ -29,7 +30,8 @@ void setup() {
   //setBrightness_(strip.Color(  255,   30, 0),500);
   //five_leds(strip.Color(  255,   30, 0),100);
   //rainbow_leds(300);
-  loofi(200);
+  //loofi(200);
+  chargeur(100);
 }
 void loop() {   
   //int a = random(0,255);
@@ -293,3 +295,20 @@ void loofi (int wait) {
         }}
       }
   }
+void chargeur(int wait) {
+  for (int j=0;j<5;j++) {
+    for(int i=0; i<=LED_COUNT; i++) { 
+      if (i<LED_COUNT-2) {
+        strip.setPixelColor(i, strip.Color(255,255,255));
+        strip.setPixelColor(i+1, strip.Color(255,255,255));
+        strip.setPixelColor(i+2, strip.Color(255,255,255));
+        strip.setPixelColor(i-1,strip.Color(0,0,0));
+        strip.show();                          
+        delay(wait);
+        //rg +=3;
+      }
+      //i += 5;
+    //else if (i==LED_COUNT) {i=0;LED_COUNT-=3;}
+  }
+  }
+}
