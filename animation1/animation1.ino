@@ -305,10 +305,7 @@ void chargeur(int wait) {
         strip.setPixelColor(i+1,strip.Color(0,0,0));
         strip.show();                          
         delay(wait);
-        //rg +=3;
       }
-      //i += 5;
-    //else if (i==LED_COUNT) {i=0;LED_COUNT-=3;}
   }
   }
 }
