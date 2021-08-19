@@ -296,13 +296,13 @@ void loofi (int wait) {
       }
   }
 void chargeur(int wait) {
-  for (int j=0;j<5;j++) {
-    for(int i=0; i<=LED_COUNT; i++) { 
-      if (i<LED_COUNT-2) {
+  for (int j=0;j<=LED_COUNT;j++) {
+    for(int i=LED_COUNT; i>=0; i--) { 
+      if (i>0) {
         strip.setPixelColor(i, strip.Color(255,255,255));
-        strip.setPixelColor(i+1, strip.Color(255,255,255));
-        strip.setPixelColor(i+2, strip.Color(255,255,255));
-        strip.setPixelColor(i-1,strip.Color(0,0,0));
+        strip.setPixelColor(i-1, strip.Color(255,255,255));
+        strip.setPixelColor(i-2, strip.Color(255,255,255));
+        strip.setPixelColor(i+1,strip.Color(0,0,0));
         strip.show();                          
         delay(wait);
         //rg +=3;
