@@ -310,6 +310,7 @@ void chargeur(int wait) {
   }
   }
 }
+/*
 void line(int wait) {
   int doub =0;
   int oub = 0;
@@ -326,4 +327,4 @@ void line(int wait) {
         delay(wait);
   }
   }
-  }}
+  }}*/
