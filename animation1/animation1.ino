@@ -31,7 +31,7 @@ void setup() {
   //five_leds(strip.Color(  255,   30, 0),100);
   //rainbow_leds(300);
   //loofi(200);
-  //chargeur(100);
+  chargeur(100);
   //line(100);
 }
 void loop() {   
