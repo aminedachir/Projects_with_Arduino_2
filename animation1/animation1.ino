@@ -15,7 +15,7 @@ void setup() {
   Serial.begin(9600);
   strip.begin(); 
   strip.show(); 
-  strip.setBrightness(55);
+  strip.setBrightness(255);
   //animation_1(strip.Color(  255,   155, 255),200);
   //stick_stack(500);
   //rainbow_2(2);
@@ -25,13 +25,13 @@ void setup() {
   //delay(500);
   //three_leds(strip.Color(  0,   0, 0),400);
   //animation_3(500);
-  //two_two(strip.Color(  255,   30, 0),600);
+  two_two(strip.Color(  255,   30, 0),600);
   //last_first(strip.Color(  255,   30, 0),1000);
   //setBrightness_(strip.Color(  255,   30, 0),500);
   //five_leds(strip.Color(  255,   30, 0),100);
   //rainbow_leds(300);
   //loofi(200);
-  chargeur(100);
+  //chargeur(100);
 }
 void loop() {   
   //int a = random(0,255);
@@ -88,7 +88,7 @@ void three_leds(uint32_t color,int wait) {
   }
 }
 void two_two(uint32_t color,int wait) {
-  for(int i=0; i<LED_COUNT; i++) { 
+  for(int i=0; i<=LED_COUNT; i++) { 
     int a = random(0,255);
     int b = random(0,255);
     int c = random(0,255);
