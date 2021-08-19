@@ -15,7 +15,7 @@ void setup() {
   Serial.begin(9600);
   strip.begin(); 
   strip.show(); 
-  strip.setBrightness(85);
+  strip.setBrightness(50);
   //animation_1(strip.Color(  255,   155, 255),200);
   //stick_stack(500);
   //rainbow_2(2);
@@ -299,16 +299,23 @@ void loofi (int wait) {
 void chargeur(int wait) {
   for (int j=0;j<LED_COUNT;j++) {
     for(int i=LED_COUNT; i>=0; i--) { 
-      if (i>=0+j) {
+      if (i>0+j) {
         strip.setPixelColor(i, strip.Color(255,255,255));
         strip.setPixelColor(i-1, strip.Color(255,255,255));
         strip.setPixelColor(i-2, strip.Color(255,255,255));
         strip.setPixelColor(i+1,strip.Color(0,0,0));
         strip.show();                          
         delay(wait);
+    if (j==LED_COUNT-1) {
+      for (int i=0;i<LED_COUNT;i++) {
+      strip.setPixelColor(i,strip.Color(0,0,0));
+      strip.show();
+      delay(wait);
+          }
       }
   }
   }
+}
 }
 /*
 void line(int wait) {
