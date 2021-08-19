@@ -311,15 +311,19 @@ void chargeur(int wait) {
   }
 }
 void line(int wait) {
+  int doub =0;
+  int oub = 0;
   for(int j=0; j<=LED_COUNT; j++) {
     for(int i=0; i<=LED_COUNT; i++) { 
-      //for(int h=0; h<=LED_COUNT; h++) { 
-      strip.setPixelColor(i,strip.Color(255,255,255));
-      strip.setPixelColor(i+2, strip.Color(255,255,255));
-      strip.setPixelColor(i-1,strip.Color(0,0,0));
-      strip.setPixelColor(i+1,strip.Color(0,0,0));
-      strip.show();                          
-      delay(wait);
+      for(int h=0; h<=LED_COUNT; h++) { 
+        strip.setPixelColor(i,strip.Color(255,255,255));
+        strip.setPixelColor(i+doub, strip.Color(255,255,255));
+        strip.setPixelColor(i-oub,strip.Color(0,0,0));
+        strip.setPixelColor(i+oub,strip.Color(0,0,0));
+        doub+=2;
+        oub+=1;
+        strip.show();                          
+        delay(wait);
   }
   }
   }}
