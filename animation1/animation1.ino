@@ -15,7 +15,7 @@ void setup() {
   Serial.begin(9600);
   strip.begin(); 
   strip.show(); 
-  strip.setBrightness(55);
+  strip.setBrightness(85);
   //animation_1(strip.Color(  255,   155, 255),200);
   //stick_stack(500);
   //rainbow_2(2);
