@@ -321,9 +321,6 @@ void chargeur(int wait) {
 }
 void train(int wait) {
   for(int j=0; j<=LED_COUNT; j++) {
-    //doub +=1;
-    //oub += 2;
-    //sb += 0;
       //for(int h=0; h<=LED_COUNT; h++) {  
     for(int i=0; i<=LED_COUNT; i++) { 
       strip.setPixelColor(sb,strip.Color(0,0,0));
@@ -347,5 +344,8 @@ void train(int wait) {
         }
     }
   }
+    doub +=1;
+    oub += 1;
+    sb += 1;
   }
 }
