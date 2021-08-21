@@ -352,14 +352,12 @@ void train(int wait) {
 }
 
 void precedenet(int wait) {
+  int j = LED_COUNT;
   for (int i=0;i<=LED_COUNT/2;i++) {
     strip.setPixelColor(i, strip.Color(255,255,255));
+    strip.setPixelColor(j, strip.Color(255,255,255));
     strip.show();
     delay(wait);
-    }
-  for (int i=LED_COUNT;i>=LED_COUNT/2;i--) {
-    strip.setPixelColor(i, strip.Color(255,255,255));
-    strip.show();
-    delay(wait);
+    j--;
     }
   }
