@@ -35,7 +35,7 @@ void setup() {
   //rainbow_leds(300);
   //loofi(200);
   //chargeur(100);
-  train(100);
+  train(50);
 }
 void loop() {   
   //int a = random(0,255);
@@ -321,19 +321,31 @@ void chargeur(int wait) {
 }
 void train(int wait) {
   for(int j=0; j<=LED_COUNT; j++) {
-    for(int h=0; h<=LED_COUNT; h++) {  
-      for(int i=0; i<=LED_COUNT; i++) { 
-        strip.setPixelColor(sb,strip.Color(0,0,0));
-        strip.setPixelColor(doub, strip.Color(255,255,255));
-        strip.setPixelColor(oub, strip.Color(255,255,255));
-        doub+=3;
-        oub+=3;
-        sb+=3;
-        strip.show();                          
-        delay(wait);
-  }
-      strip.setPixelColor(oub-1,strip.Color(0,0,0));
-      strip.setPixelColor(oub+1, strip.Color(255,255,255));
+    //doub +=1;
+    //oub += 2;
+    //sb += 0;
+      //for(int h=0; h<=LED_COUNT; h++) {  
+    for(int i=0; i<=LED_COUNT; i++) { 
+      strip.setPixelColor(sb,strip.Color(0,0,0));
+      strip.setPixelColor(doub, strip.Color(255,255,255));
+      strip.setPixelColor(oub, strip.Color(255,255,255));
+      doub+=3;
+      oub+=3;
+      sb+=3;
+      strip.show();                          
+      delay(wait);
+      if (i==LED_COUNT) {
+        doub =1;
+        oub = 2;
+        sb = 0;
+        for(int i=0; i<=LED_COUNT; i++) { 
+          strip.setPixelColor(oub-1,strip.Color(0,0,0));
+          strip.setPixelColor(oub+1, strip.Color(255,255,255));
+          strip.show();
+          doub+=3;
+          oub+=3;
+        }
+    }
   }
   }
 }
