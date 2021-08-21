@@ -36,7 +36,7 @@ void setup() {
   //loofi(200);
   //chargeur(100);
   //train(50);
-  precedenet(700);
+  precedent(700);
 }
 void loop() {   
   //int a = random(0,255);
@@ -351,7 +351,7 @@ void train(int wait) {
   }
 }
 
-void precedenet(int wait) {
+void precedent(int wait) {
   int j = LED_COUNT;
   for (int i=0;i<=LED_COUNT/2;i++) {
     strip.setPixelColor(i, strip.Color(255,255,255));
