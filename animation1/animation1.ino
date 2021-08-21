@@ -35,7 +35,8 @@ void setup() {
   //rainbow_leds(300);
   //loofi(200);
   //chargeur(100);
-  train(50);
+  //train(50);
+  precedenet(100);
 }
 void loop() {   
   //int a = random(0,255);
@@ -349,3 +350,16 @@ void train(int wait) {
     sb += 1;
   }
 }
+
+void precedenet(int wait) {
+  for (int i=0;i<=LED_COUNT/2;i++) {
+    strip.setPixelColor(i, strip.Color(255,255,255));
+    strip.show();
+    delay(wait);
+    }
+  for (int i=LED_COUNT;i>=LED_COUNT/2;i--) {
+    strip.setPixelColor(i, strip.Color(255,255,255));
+    strip.show();
+    delay(wait);
+    }
+  }
