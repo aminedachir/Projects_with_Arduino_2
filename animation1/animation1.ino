@@ -36,7 +36,7 @@ void setup() {
   //loofi(200);
   //chargeur(100);
   //train(50);
-  precedenet(100);
+  precedenet(700);
 }
 void loop() {   
   //int a = random(0,255);
@@ -359,5 +359,15 @@ void precedenet(int wait) {
     strip.show();
     delay(wait);
     j--;
+    if (i == LED_COUNT/2 && j == LED_COUNT/2-1) {
+      delay(500);
+      for (int i=LED_COUNT/2;i>=0;i++) {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.setPixelColor(j, strip.Color(0,0,0));
+        strip.show();
+        delay(wait);
+        j--;
+      }
     }
   }
+}
