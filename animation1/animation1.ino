@@ -31,7 +31,7 @@ void setup() {
   //five_leds(strip.Color(  255,   30, 0),100);
   //rainbow_leds(300);
   //loofi(200);
-  chargeur(100,-5);
+  chargeur(100);
   //line(100);
 }
 void loop() {   
@@ -295,43 +295,27 @@ void loofi (int wait) {
         }}
       }
   }
-void chargeur(int wait, int m) {
+void chargeur(int wait) {
   for (int j=0;j<=LED_COUNT;j++) {
-    if (m > 0){
-      for(int i=LED_COUNT; i>=0; i--) { 
-        if (i>=0+j) {
-          strip.setPixelColor(i, strip.Color(255,255,255));
-          strip.setPixelColor(i-1, strip.Color(255,255,255));
-          strip.setPixelColor(i-2, strip.Color(255,255,255));
-          strip.setPixelColor(i+1,strip.Color(0,0,0));
-          strip.show();                          
-          delay(wait);
-      if (j==LED_COUNT) {
-        for (int i=0;i<LED_COUNT;i++) {
-        strip.setPixelColor(i,strip.Color(0,0,0));
-        strip.show();
+    for(int i=LED_COUNT; i>=0; i--) { 
+      if (i>=0+j) {
+        strip.setPixelColor(i, strip.Color(255,255,255));
+        strip.setPixelColor(i-1, strip.Color(255,255,255));
+        strip.setPixelColor(i-2, strip.Color(255,255,255));
+        strip.setPixelColor(i+1,strip.Color(0,0,0));
+        strip.show();                          
         delay(wait);
+    if (j==LED_COUNT) {
+      for (int i=0;i<LED_COUNT;i++) {
+      strip.setPixelColor(i,strip.Color(0,0,0));
+      strip.show();
+      delay(wait);
           }
-      }
-    else if (m < 0) {
-      for(int i=0; i<=LED_COUNT; i++) { 
-        if (i<=LED_COUNT-j) {
-          strip.setPixelColor(i, strip.Color(255,255,255));
-          strip.setPixelColor(i-1, strip.Color(255,255,255));
-          strip.setPixelColor(i-2, strip.Color(255,255,255));
-          strip.setPixelColor(i+1,strip.Color(0,0,0));
-          strip.show();                          
-          delay(wait);}
-      if (j==LED_COUNT) {
-        for (int i=0;i<LED_COUNT;i++) {
-        strip.setPixelColor(i,strip.Color(0,0,0));
-        strip.show();
-        delay(wait);
       }
   }
   }
 }
-        }        }}}}
+}
 /*
 void line(int wait) {
   int doub =0;
