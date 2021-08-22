@@ -410,6 +410,7 @@ void turtle(int wait) {
   }
 }
 void guitar(int wait) {
+  int j=LED_COUNT/2;
   for (int i=0;i<=LED_COUNT/2;i++) {
     strip.setPixelColor(i,strip.Color(125,125,125));
     strip.show();
@@ -417,10 +418,17 @@ void guitar(int wait) {
     if (i==LED_COUNT/2) {
       for (int i=LED_COUNT/2;i>=0;i--) {
         strip.setPixelColor(i,strip.Color(0,0,0));
-        
+        strip.setPixelColor(j,strip.Color(125,125,125));
         strip.show();
         delay(wait);
+        j++;
+        if (i==0) {
+        for (int j=LED_COUNT/2;j<=LED_COUNT;j++) {
+          strip.setPixelColor(j,strip.Color(0,0,0));
+          strip.show();
+          delay(wait);
       }
     }
   }
 }
+  }}
