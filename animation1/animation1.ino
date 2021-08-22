@@ -38,7 +38,8 @@ void setup() {
   //train(50);
   //precedent(500);
   //moins(1000);
-  turtle(70);
+  //turtle(70);
+  guitar(300);
 }
 void loop() {   
   //int a = random(0,255);
@@ -408,3 +409,10 @@ void turtle(int wait) {
       }
   }
 }
+void guitar(int wait) {
+  for (int i=0;i<=LED_COUNT/2;i++) {
+    strip.setPixelColor(i,strip.Color(125,125,125));
+    strip.show();
+    delay(wait);
+    }
+  }
