@@ -478,5 +478,9 @@ void duncer(int wait) {
     strip.setPixelColor(i+2, strip.Color(255,255,255));
     strip.show();
     delay(wait);
+    strip.setPixelColor(i+2, strip.Color(0,0,0));
+    strip.setPixelColor(i+1, strip.Color(255,255,255));
+    strip.show();
+    delay(wait);
     }
   }
