@@ -388,15 +388,16 @@ void moins(int wait) {
     }
   }
 void turtle(int wait) {
-  for (int j=0;j<=LED_COUNT;j++) {
-    for (int i=0;i<=LED_COUNT;i++) {
+  for (int j=-1;j<=LED_COUNT;j++) {
+    for (int i=j;i<=LED_COUNT;i++) {
       strip.setPixelColor(i, strip.Color(255,255,255));
       strip.setPixelColor(i-1, strip.Color(0,0,0));
       strip.show();
       delay(wait);
-      }
     strip.setPixelColor(j, strip.Color(255,255,255));
+    strip.setPixelColor(j-1, strip.Color(255,255,255));
     strip.show();
-    delay(wait);
+    delay(100);
+  }
   }
   }
