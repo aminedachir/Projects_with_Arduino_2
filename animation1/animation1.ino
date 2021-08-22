@@ -471,3 +471,8 @@ void piano__(int wait){
 }
   }
 }
+void duncer(int wait) {
+  for (int i=0;i<=LED_COUNT;i++) {
+    
+    }
+  }
