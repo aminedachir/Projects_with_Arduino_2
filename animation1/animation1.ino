@@ -38,7 +38,7 @@ void setup() {
   //train(50);
   //precedent(500);
   //moins(1000);
-  turtle(20);
+  turtle(70);
 }
 void loop() {   
   //int a = random(0,255);
@@ -393,11 +393,18 @@ void turtle(int wait) {
       strip.setPixelColor(i, strip.Color(255,255,255));
       strip.setPixelColor(i-1, strip.Color(0,0,0));
       strip.show();
-      delay(wait);
+      delay(wait/2);
     strip.setPixelColor(j, strip.Color(255,255,255));
     strip.setPixelColor(j-1, strip.Color(255,255,255));
     strip.show();
-    delay(100);
+    delay(wait);
     }
+    if (j==LED_COUNT) {
+      for (int i=0;i<LED_COUNT;i++) {
+        strip.setPixelColor(i, strip.Color(0,0,0));
+        strip.show();                          
+        delay(wait);
+        }
+      }
   }
 }
