@@ -414,5 +414,13 @@ void guitar(int wait) {
     strip.setPixelColor(i,strip.Color(125,125,125));
     strip.show();
     delay(wait);
+    if (i==LED_COUNT/2) {
+      for (int i=LED_COUNT/2;i>=0;i--) {
+        strip.setPixelColor(i,strip.Color(0,0,0));
+        
+        strip.show();
+        delay(wait);
+      }
     }
   }
+}
