@@ -450,22 +450,24 @@ void piano(int wait) {
   }
   }
 }
-void piano__(int wait)
-  int j;
+void piano__(int wait){
+  int j=0;
+  int h=0;
   for (int i=0;i<=LED_COUNT;i++) {
     strip.setPixelColor(i, strip.Color(255,255,255));
     //strip.setPixelColor(i-1, strip.Color(0,0,0));
     strip.show();
     delay(wait);
     j++;
-    if (j==LED_COUNT/3) {
-      for (int i=LED_COUNT/3;i>=LED_COUNT/3-1;i--) {
+    h++;
+    if (j==8) {
+      for (int i=j;i>=j-2;i--) {
         strip.setPixelColor(i, strip.Color(0,0,0));
         strip.setPixelColor(i-1, strip.Color(0,0,0));
         strip.show();
         delay(wait);
       }
-      i-=1;
-  }
+      i-=3;
+}
   }
 }
