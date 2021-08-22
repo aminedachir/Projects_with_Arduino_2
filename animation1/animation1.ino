@@ -39,7 +39,8 @@ void setup() {
   //precedent(500);
   //moins(1000);
   //turtle(70);
-  guitar(300);
+  //guitar(300);
+  pinao(100);
 }
 void loop() {   
   //int a = random(0,255);
@@ -437,4 +438,5 @@ void piano(int wait) {
       strip.setPixelColor(i, strip.Color(255,255,255));
       strip.setPixelColor(i-1, strip.Color(0,0,0));
       strip.show();
+      delay(wait);
   }
