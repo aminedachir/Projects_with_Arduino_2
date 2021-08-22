@@ -398,6 +398,6 @@ void turtle(int wait) {
     strip.setPixelColor(j-1, strip.Color(255,255,255));
     strip.show();
     delay(100);
+    }
   }
-  }
-  }
+}
