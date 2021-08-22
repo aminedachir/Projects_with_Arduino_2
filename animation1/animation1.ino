@@ -40,7 +40,7 @@ void setup() {
   //moins(1000);
   //turtle(70);
   //guitar(300);
-  pinao(100);
+  piano(100);
 }
 void loop() {   
   //int a = random(0,255);
@@ -434,9 +434,18 @@ void guitar(int wait) {
 }
   }}
 void piano(int wait) {
-  for (int i=0;i<=LED_COUNT;i++) {
+  for (int i=0;i<=LED_COUNT/4;i++) {
       strip.setPixelColor(i, strip.Color(255,255,255));
       strip.setPixelColor(i-1, strip.Color(0,0,0));
       strip.show();
       delay(wait);
+      if (i==LED_COUNT/4){
+        for (int i=LED_COUNT/4-1;i>=0;i--) {
+          strip.setPixelColor(i, strip.Color(255,255,255));
+          strip.setPixelColor(i+1, strip.Color(0,0,0));
+          strip.show();
+          delay(wait);
+        }
   }
+  }
+}
