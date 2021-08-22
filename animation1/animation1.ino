@@ -432,3 +432,9 @@ void guitar(int wait) {
   }
 }
   }}
+void piano(int wait) {
+  for (int i=0;i<=LED_COUNT;i++) {
+      strip.setPixelColor(i, strip.Color(255,255,255));
+      strip.setPixelColor(i-1, strip.Color(0,0,0));
+      strip.show();
+  }
