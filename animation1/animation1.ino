@@ -41,7 +41,8 @@ void setup() {
   //turtle(70);
   //guitar(300);
   //piano(100);
-  piano__(200);
+  //piano__(200);
+  duncer(200);
 }
 void loop() {   
   //int a = random(0,255);
@@ -473,6 +474,9 @@ void piano__(int wait){
 }
 void duncer(int wait) {
   for (int i=0;i<=LED_COUNT;i++) {
-    
+    strip.setPixelColor(i, strip.Color(255,255,255));
+    strip.setPixelColor(i+2, strip.Color(255,255,255));
+    strip.show();
+    delay(wait);
     }
   }
