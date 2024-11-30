@@ -2,7 +2,7 @@
 #ifdef __AVR__
  #include <avr/power.h>
 #endif
-#define LED_PIN    5
+#define LED_PIN    6
 int brightness = 5;
 float green=0;
 float green_=0;
@@ -12,17 +12,17 @@ int rg=2;
 int doub =1;
 int oub = 2;
 int sb = 0;
-#define LED_COUNT 16
+#define LED_COUNT 100
 Adafruit_NeoPixel strip(LED_COUNT, LED_PIN,NEO_GRB + NEO_KHZ800);
 void setup() {
   Serial.begin(9600);
   strip.begin(); 
   strip.show(); 
-  strip.setBrightness(50);
+  strip.setBrightness(255);
   //animation_1(strip.Color(  255,   155, 255),200);
   //stick_stack(500);
-  //rainbow_2(2);
   //__rainbow__(2);
+  rainbow_leds(2);
   //animation_1(strip.Color(  0,   0, 0),200);
   //three_leds(strip.Color(  155,   155, 0),100);
   //delay(500);
@@ -42,7 +42,9 @@ void setup() {
   //guitar(300);
   //piano(100);
   //piano__(200);
-  duncer(200);
+  //duncer(200);
+  //rainbow_2(1);
+  //rainbow_leds(1);
 }
 void loop() {   
   //int a = random(0,255);
@@ -50,6 +52,8 @@ void loop() {
   //int c = random(0,255);
   //random_colors(strip.Color(  a,   b, c),100);
   //rainbow_leds(100);
+  //Serial.println("ARVDUDE do I owe you money or something?!");
+  //rainbow_2(1);
 }
 void animation_1(uint32_t color,int wait) {
   for(int i=0; i<LED_COUNT; i++) { 
@@ -75,6 +79,7 @@ void rainbow_2(int wait) {
       strip.setPixelColor(i, strip.gamma32(strip.ColorHSV(pixelHue)));
       strip.show();
       //delay(wait);
+      
       if (i==LED_COUNT) {
         for (int i=0;i<LED_COUNT;i++) {
           strip.setPixelColor(i,strip.Color(0,0,0));
@@ -82,6 +87,7 @@ void rainbow_2(int wait) {
           delay(200);
         }
         }
+        
     }
   }
 }
@@ -153,7 +159,6 @@ void random_colors (uint32_t color,int wait) {
     }
   }
   }
-  /*
 void __rainbow__(uint8_t wait) {
   uint16_t i,j;
   for(j=0;j<255;j++) {
@@ -166,13 +171,13 @@ void __rainbow__(uint8_t wait) {
         for (int i=0;i<LED_COUNT;i++) {
           strip.setPixelColor(i,strip.Color(0,0,0));
           strip.show();
-          delay(200);
+          delay(50);
       j=255;
         }
         }
       }
-      //strip.show();
-      //delay(wait);
+      strip.show();
+      delay(wait);
     }
 }
 uint32_t Wheel(byte WheelPos) {
@@ -188,7 +193,6 @@ uint32_t Wheel(byte WheelPos) {
     return strip.Color(0,WheelPos * 3, 255-WheelPos*3);
   }
   }
-*/ 
 void stick_stack(int wait) {
   for(int i=0; i<LED_COUNT/2; i++) { 
     int a = random(0,255);
@@ -273,6 +277,7 @@ void rainbow_leds (int wait) {
       strip.setPixelColor(i,strip.Color(green,red,blue));
       red=red+85;
       }
+      /*
     if (i==LED_COUNT) {
       delay(500);
       for (int i=0;i<LED_COUNT;i++) {
@@ -283,6 +288,7 @@ void rainbow_leds (int wait) {
       }
     strip.show();                          
     delay(wait);
+    */
     }
 }
 void loofi (int wait) {
